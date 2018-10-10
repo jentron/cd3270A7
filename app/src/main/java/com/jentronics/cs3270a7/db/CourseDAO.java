@@ -14,7 +14,7 @@ public interface CourseDAO {
     @Query("select * from course")
     List<Course> getAll();
 
-    @Query("select * from course where _id = :uid")
+    @Query("select * from course where uid = :uid")
     List<Course> loadByID(int uid);
 
     @Delete

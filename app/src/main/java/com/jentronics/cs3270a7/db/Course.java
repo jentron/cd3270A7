@@ -8,7 +8,6 @@ import android.arch.persistence.room.PrimaryKey;
 public class Course {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name="_id")
     private int uid;
 
     private String id;
@@ -73,15 +72,4 @@ public class Course {
     public void setEnd_at(String end_at) {
         this.end_at = end_at;
     }
-
-
-
-    /*
-    _id: integer primary key auto-increment
-    id: text
-    name: text
-    course_code: text
-    start_at: text
-    end_at: text
-    */
 }
