@@ -39,14 +39,6 @@ public class CourseEditFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-  /*      List<Course> courseList = AppDatabase.getInstance(getContext())
-                .courseDAO()
-                .getAll();
-
-        for(Course c : courseList) {
-            Log.d("Test", "All Courses: " + c.toString());
-        }*/
-
         // Inflate the layout for this fragment
         return root = inflater.inflate(R.layout.fragment_course_edit, container, false);
     }
