@@ -14,8 +14,8 @@ public interface CourseDAO {
     @Query("select * from course")
     List<Course> getAll();
 
-    @Query("select * from course where uid = :uid")
-    List<Course> loadByID(int uid);
+    @Query("select * from course where id = :id")
+    List<Course> loadByID(String id);
 
     @Delete
     void delete(Course course);

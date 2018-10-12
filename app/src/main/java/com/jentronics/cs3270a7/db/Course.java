@@ -16,8 +16,7 @@ public class Course {
     private String start_at;
     private String end_at;
 
-    public Course(int uid, String id, String name, String course_code, String start_at, String end_at) {
-        this.uid = uid;
+    public Course(String id, String name, String course_code, String start_at, String end_at) {
         this.id = id;
         this.name = name;
         this.course_code = course_code;
@@ -71,5 +70,17 @@ public class Course {
 
     public void setEnd_at(String end_at) {
         this.end_at = end_at;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "uid=" + uid +
+                ", id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", course_code='" + course_code + '\'' +
+                ", start_at='" + start_at + '\'' +
+                ", end_at='" + end_at + '\'' +
+                '}';
     }
 }

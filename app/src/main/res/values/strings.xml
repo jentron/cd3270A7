@@ -6,4 +6,7 @@
     <string name="lbl_id">ID:</string>
     <string name="lbl_name">Name (Required)</string>
     <string name="lbl_code">Course Code</string>
+    <string name="lbl_start_at">Start At</string>
+    <string name="lbl_end_at">End At</string>
+    <string name="lbl_save">Save</string>
 </resources>
