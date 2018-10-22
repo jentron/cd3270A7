@@ -1,11 +1,11 @@
-package com.jentronics.cs3270a7;
+package com.jentronics.cs3270a8;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.jentronics.cs3270a7.db.AppDatabase;
-import com.jentronics.cs3270a7.db.Course;
+import com.jentronics.cs3270a8.db.AppDatabase;
+import com.jentronics.cs3270a8.db.Course;
 
 import java.util.List;
 

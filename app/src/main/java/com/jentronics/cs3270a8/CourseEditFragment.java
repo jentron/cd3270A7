@@ -1,8 +1,7 @@
-package com.jentronics.cs3270a7;
+package com.jentronics.cs3270a8;
 
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -11,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.jentronics.cs3270a7.db.AppDatabase;
-import com.jentronics.cs3270a7.db.Course;
+import com.jentronics.cs3270a8.db.AppDatabase;
+import com.jentronics.cs3270a8.db.Course;
 
 import java.util.List;
 

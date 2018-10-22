@@ -1,6 +1,5 @@
-package com.jentronics.cs3270a7.db;
+package com.jentronics.cs3270a8.db;
 
-import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
