@@ -1,5 +1,6 @@
 package com.jentronics.cs3270a8.db;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
@@ -12,7 +13,7 @@ import java.util.List;
 public interface CourseDAO {
 
     @Query("select * from course")
-    List<Course> getAll();
+    LiveData<List<Course>> getAll();
 
     @Query("select * from course where id = :id")
     List<Course> loadByID(String id);
