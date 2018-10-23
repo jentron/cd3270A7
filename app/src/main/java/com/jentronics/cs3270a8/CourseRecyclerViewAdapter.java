@@ -50,6 +50,12 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
         return courses.size();
     }
 
+    public void addItems(List<Course> courses) {
+        this.courses.clear();
+        this.courses.addAll(courses);
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView tvLine1, tvLine2;
         public Course course;
