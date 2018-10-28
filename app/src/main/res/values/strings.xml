@@ -11,4 +11,9 @@
     <string name="lbl_save">Save</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="action_settings">Settings</string>
+    <string name="hint_crn_number">CRN Number</string>
+    <string name="txt_name">Name</string>
+    <string name="txt_course_code">Course Code</string>
+    <string name="txt_start_at">Start At:</string>
+    <string name="txt_end_at">End At:</string>
 </resources>
