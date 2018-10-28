@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainActivityFragment extends Fragment  implements CourseRecyclerInterface {
+public class MainActivityFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private CourseRecyclerViewAdapter adapter;
@@ -40,7 +40,7 @@ public class MainActivityFragment extends Fragment  implements CourseRecyclerInt
         root = inflater.inflate(R.layout.fragment_main, container, false);
 
         recyclerView = (RecyclerView)root.findViewById(R.id.rvCourseList);
-        mCallback = (CourseRecyclerInterface) getActivity();
+        mCallback = (CourseRecyclerInterface) getContext();
 
         return root;
     }
@@ -50,7 +50,7 @@ public class MainActivityFragment extends Fragment  implements CourseRecyclerInt
         super.onResume();
 
         Context context = getContext();
-        adapter = new CourseRecyclerViewAdapter(new ArrayList<Course>(), mCallback);
+        adapter = new CourseRecyclerViewAdapter(new ArrayList<Course>(), context);
         if(columnCount <= 1)
         {
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -75,8 +75,4 @@ public class MainActivityFragment extends Fragment  implements CourseRecyclerInt
 
     }
 
-    @Override
-    public void viewCourse(Course course) {
-        Log.d("Ron Debug", "Do something cool");
-    }
 }

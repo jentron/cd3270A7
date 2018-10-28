@@ -7,12 +7,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.jentronics.cs3270a8.db.AppDatabase;
 import com.jentronics.cs3270a8.db.Course;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity   implements CourseRecyclerInterface {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,4 +38,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void viewCourse(Course course) {
+        Log.d("RonDebug", "Do something cool");
+    }
 }

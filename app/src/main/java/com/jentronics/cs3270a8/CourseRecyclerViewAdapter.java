@@ -1,5 +1,6 @@
 package com.jentronics.cs3270a8;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,9 +18,9 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
     private final List<Course> courses;
     private CourseRecyclerInterface mCallback;
 
-    public CourseRecyclerViewAdapter(List<Course> courses, CourseRecyclerInterface mCallback) {
+    public CourseRecyclerViewAdapter(List<Course> courses, Context context) {
         this.courses = courses;
-        this.mCallback = mCallback;
+        this.mCallback = (CourseRecyclerInterface) context;
     }
 
     @NonNull
