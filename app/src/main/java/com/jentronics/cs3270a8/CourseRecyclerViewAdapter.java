@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+
 import com.jentronics.cs3270a8.db.Course;
 
 import java.util.List;
@@ -14,9 +15,11 @@ import java.util.List;
 public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecyclerViewAdapter.ViewHolder> {
 
     private final List<Course> courses;
+    private CourseRecyclerInterface mCallback;
 
-    public CourseRecyclerViewAdapter(List<Course> courses) {
+    public CourseRecyclerViewAdapter(List<Course> courses, CourseRecyclerInterface mCallback) {
         this.courses = courses;
+        this.mCallback = mCallback;
     }
 
     @NonNull
@@ -29,7 +32,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Course course = courses.get(position);
+        final Course course = courses.get(position);
         if (course != null){
             holder.tvLine1.setText(course.getName());
             holder.tvLine2.setText(course.getCourse_code());
@@ -38,6 +41,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                 @Override
                 public void onClick(View view) {
                     //TODO: userClicked set up an interface
+                    mCallback.viewCourse(course);
                 }
             });
 

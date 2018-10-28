@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +23,13 @@ import java.util.List;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainActivityFragment extends Fragment {
+public class MainActivityFragment extends Fragment  implements CourseRecyclerInterface {
 
     private RecyclerView recyclerView;
     private CourseRecyclerViewAdapter adapter;
     private int columnCount = 1;
     private View root;
+    private CourseRecyclerInterface mCallback;
 
     public MainActivityFragment() {
     }
@@ -38,6 +40,7 @@ public class MainActivityFragment extends Fragment {
         root = inflater.inflate(R.layout.fragment_main, container, false);
 
         recyclerView = (RecyclerView)root.findViewById(R.id.rvCourseList);
+        mCallback = (CourseRecyclerInterface) getActivity();
 
         return root;
     }
@@ -47,7 +50,7 @@ public class MainActivityFragment extends Fragment {
         super.onResume();
 
         Context context = getContext();
-        adapter = new CourseRecyclerViewAdapter(new ArrayList<Course>());
+        adapter = new CourseRecyclerViewAdapter(new ArrayList<Course>(), mCallback);
         if(columnCount <= 1)
         {
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -70,5 +73,10 @@ public class MainActivityFragment extends Fragment {
                     }
                 });
 
+    }
+
+    @Override
+    public void viewCourse(Course course) {
+        Log.d("Ron Debug", "Do something cool");
     }
 }
