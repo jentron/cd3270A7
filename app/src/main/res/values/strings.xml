@@ -16,4 +16,5 @@
     <string name="txt_course_code">Course Code</string>
     <string name="txt_start_at">Start At:</string>
     <string name="txt_end_at">End At:</string>
+    <string name="title_new_course">New Course</string>
 </resources>
