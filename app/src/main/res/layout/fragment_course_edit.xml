@@ -33,7 +33,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/lbl_id"
-                    android:inputType="numberDecimal"
                     android:textAlignment="textStart" />
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>

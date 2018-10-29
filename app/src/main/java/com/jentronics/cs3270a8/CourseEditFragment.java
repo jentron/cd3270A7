@@ -71,7 +71,7 @@ public class CourseEditFragment extends Fragment {
               //  Log.d("test", "In the button code");
                 final Course course_update = new Course(tv_id, name, code, start, end);
                 course_update.setUid(course.getUid());
-                
+
                 new Thread(new Runnable() {
                     @Override
                     public void run() {

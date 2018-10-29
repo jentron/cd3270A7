@@ -19,4 +19,5 @@
     <string name="title_new_course">New Course</string>
     <string name="interface_error_msg">Must Implement CourseRecyclerInterface</string>
     <string name="interface_error_msga">An error message</string>
+    <string name="title_view_course">View Course</string>
 </resources>

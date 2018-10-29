@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity   implements CourseRecyclerI
     public void viewCourse(Course course) {
         int uid = course.getUid();
         FragmentManager fm = getSupportFragmentManager();
-        CourseEditFragment dialog = new CourseEditFragment();
+        ViewCourseDialogFragment dialog = new ViewCourseDialogFragment();
         dialog.setCourse(course);
         fm.beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
