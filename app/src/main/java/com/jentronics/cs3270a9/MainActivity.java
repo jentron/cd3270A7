@@ -8,12 +8,17 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.jentronics.cs3270a9.db.AppDatabase;
 import com.jentronics.cs3270a9.db.Course;
 
-public class MainActivity extends AppCompatActivity   implements CourseRecyclerInterface {
+public class MainActivity extends AppCompatActivity   implements CourseRecyclerInterface, GetCanvasCourses.OnCourseComplete {
+
+    private GetCanvasCourses task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,27 @@ public class MainActivity extends AppCompatActivity   implements CourseRecyclerI
 
             }
         });
+
+        task = new GetCanvasCourses();
+        task.setOnCourseComplete((GetCanvasCourses.OnCourseComplete) this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.clear();
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.action_download:
+                task.execute();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
@@ -64,5 +90,15 @@ public class MainActivity extends AppCompatActivity   implements CourseRecyclerI
                 .addToBackStack(null)
                 .commit();
         //  Log.d("RonDebug", "Do something cool");
+    }
+
+    @Override
+    public void processCourseList(Course[] courses) {
+        if(courses != null) {
+            Log.d("Test", "There are " + courses.length + " courses");
+          //  adapter
+
+        }
+
     }
 }

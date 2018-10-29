@@ -61,6 +61,11 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
         notifyDataSetChanged();
     }
 
+    public void clear(){
+        this.courses.clear();
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView tvLine1, tvLine2;
         public Course course;

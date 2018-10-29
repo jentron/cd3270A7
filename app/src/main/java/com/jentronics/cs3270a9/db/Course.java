@@ -9,11 +9,11 @@ public class Course {
     @PrimaryKey(autoGenerate = true)
     private int uid;
 
-    private String id;
-    private String name;
-    private String course_code;
-    private String start_at;
-    private String end_at;
+    protected String id;
+    protected String name;
+    protected String course_code;
+    protected String start_at;
+    protected String end_at;
 
     public Course(String id, String name, String course_code, String start_at, String end_at) {
         this.id = id;

@@ -6,4 +6,5 @@
 /build
 /captures
 .externalNativeBuild
-app/src/main/java/Authorization.java
+app/src/main/java/com/jentronics/cs3270a9/Authorization.java
+
