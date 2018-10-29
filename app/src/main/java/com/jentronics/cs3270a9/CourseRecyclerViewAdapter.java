@@ -3,6 +3,7 @@ package com.jentronics.cs3270a9;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,12 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
 
     private final List<Course> courses;
     private CourseRecyclerInterface mCallback;
+    private GetCanvasCourseData task;
 
     public CourseRecyclerViewAdapter(List<Course> courses, Context context) {
         this.courses = courses;
         this.mCallback = (CourseRecyclerInterface) context;
+        this.task = new GetCanvasCourseData();
     }
 
     @NonNull
@@ -45,6 +48,15 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                 public void onClick(View view) {
                     //TODO: userClicked set up an interface
                     mCallback.viewCourse(course);
+                }
+            });
+
+            holder.view.setOnLongClickListener(new View.OnLongClickListener(){
+                @Override
+                public boolean onLongClick(View view){
+                    Log.d("Test", "Long Press fired on "+course.toString());
+                    task.execute(course.getId());
+                    return true;
                 }
             });
 
