@@ -35,7 +35,9 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Course course = courses.get(position);
         if (course != null){
-            holder.tvLine1.setText(course.getName());
+            String line1 = course.getName();
+            if (line1 == null) line1 = course.getId();
+            holder.tvLine1.setText(line1);
             holder.tvLine2.setText(course.getCourse_code());
 
             holder.view.setOnClickListener(new View.OnClickListener() {

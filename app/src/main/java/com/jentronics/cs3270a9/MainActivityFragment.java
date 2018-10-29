@@ -11,6 +11,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -41,8 +43,13 @@ public class MainActivityFragment extends Fragment {
 
         recyclerView = (RecyclerView)root.findViewById(R.id.rvCourseList);
         mCallback = (CourseRecyclerInterface) getContext();
-
         return root;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        Log.d("Test", "Called onCreateOptionsMenu");
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override

@@ -16,6 +16,8 @@ import android.view.View;
 import com.jentronics.cs3270a9.db.AppDatabase;
 import com.jentronics.cs3270a9.db.Course;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity   implements CourseRecyclerInterface, GetCanvasCourses.OnCourseComplete {
 
     private GetCanvasCourses task;
@@ -93,10 +95,21 @@ public class MainActivity extends AppCompatActivity   implements CourseRecyclerI
     }
 
     @Override
-    public void processCourseList(Course[] courses) {
+    public void processCourseList(final Course[] courses) {
         if(courses != null) {
             Log.d("Test", "There are " + courses.length + " courses");
-          //  adapter
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    AppDatabase.getInstance(getApplicationContext())
+                            .courseDAO()
+                            .deleteAll();
+                    AppDatabase.getInstance(getApplicationContext())
+                            .courseDAO()
+                            .insert(courses);
+                }
+            }).start();
 
         }
 

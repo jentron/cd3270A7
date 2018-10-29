@@ -29,6 +29,9 @@ public interface CourseDAO {
 
     @Insert
     void insert(Course... courses);
+
+    @Query("delete from course")
+    void deleteAll();
 }
     /*
     _id: integer primary key auto-increment
