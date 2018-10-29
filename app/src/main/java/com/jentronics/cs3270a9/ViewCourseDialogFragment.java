@@ -1,4 +1,4 @@
-package com.jentronics.cs3270a8;
+package com.jentronics.cs3270a9;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -20,8 +20,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.TextView;
 
-import com.jentronics.cs3270a8.db.AppDatabase;
-import com.jentronics.cs3270a8.db.Course;
+import com.jentronics.cs3270a9.db.AppDatabase;
+import com.jentronics.cs3270a9.db.Course;
 
 public class ViewCourseDialogFragment extends DialogFragment {
     private TextView tv_view_id, tv_view_name, tv_view_code, tv_view_start_at, tv_view_end_at;

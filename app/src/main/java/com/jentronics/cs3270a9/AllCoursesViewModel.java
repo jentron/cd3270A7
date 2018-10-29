@@ -1,11 +1,11 @@
-package com.jentronics.cs3270a8;
+package com.jentronics.cs3270a9;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
 import android.content.Context;
 
-import com.jentronics.cs3270a8.db.AppDatabase;
-import com.jentronics.cs3270a8.db.Course;
+import com.jentronics.cs3270a9.db.AppDatabase;
+import com.jentronics.cs3270a9.db.Course;
 
 import java.util.List;
 

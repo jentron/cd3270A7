@@ -1,4 +1,4 @@
-package com.jentronics.cs3270a8;
+package com.jentronics.cs3270a9;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import com.jentronics.cs3270a8.db.Course;
+import com.jentronics.cs3270a9.db.Course;
 
 import java.util.List;
 

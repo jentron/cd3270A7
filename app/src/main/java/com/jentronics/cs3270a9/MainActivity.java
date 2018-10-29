@@ -1,4 +1,4 @@
-package com.jentronics.cs3270a8;
+package com.jentronics.cs3270a9;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,8 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
-import com.jentronics.cs3270a8.db.AppDatabase;
-import com.jentronics.cs3270a8.db.Course;
+import com.jentronics.cs3270a9.db.AppDatabase;
+import com.jentronics.cs3270a9.db.Course;
 
 public class MainActivity extends AppCompatActivity   implements CourseRecyclerInterface {
 

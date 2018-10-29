@@ -1,4 +1,4 @@
-package com.jentronics.cs3270a8;
+package com.jentronics.cs3270a9;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -14,7 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jentronics.cs3270a8.db.Course;
+import com.jentronics.cs3270a9.db.Course;
 
 import java.util.ArrayList;
 import java.util.List;

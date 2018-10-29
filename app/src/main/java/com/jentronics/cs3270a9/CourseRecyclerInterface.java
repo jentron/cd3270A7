@@ -1,6 +1,6 @@
-package com.jentronics.cs3270a8;
+package com.jentronics.cs3270a9;
 
-import com.jentronics.cs3270a8.db.Course;
+import com.jentronics.cs3270a9.db.Course;
 
 public interface CourseRecyclerInterface {
     void viewCourse(Course course);
