@@ -51,4 +51,18 @@ public class MainActivity extends AppCompatActivity   implements CourseRecyclerI
                 .commit();
       //  Log.d("RonDebug", "Do something cool");
     }
+
+    @Override
+    public void editCourse(Course course) {
+        int uid = course.getUid();
+        FragmentManager fm = getSupportFragmentManager();
+        CourseEditFragment dialog = new CourseEditFragment();
+        dialog.setCourse(course);
+        fm.beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .add(android.R.id.content, dialog)
+                .addToBackStack(null)
+                .commit();
+        //  Log.d("RonDebug", "Do something cool");
+    }
 }

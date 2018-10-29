@@ -20,4 +20,7 @@
     <string name="interface_error_msg">Must Implement CourseRecyclerInterface</string>
     <string name="interface_error_msga">An error message</string>
     <string name="title_view_course">View Course</string>
+    <string name="title_sure">Are you sure?</string>
+    <string name="lbl_permanet_del">This will permanently delete the course!</string>
+    <string name="lbl_delete">Delete</string>
 </resources>

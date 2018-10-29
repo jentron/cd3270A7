@@ -1,12 +1,14 @@
 package com.jentronics.cs3270a8;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -24,6 +26,7 @@ import com.jentronics.cs3270a8.db.Course;
 public class ViewCourseDialogFragment extends DialogFragment {
     private TextView tv_view_id, tv_view_name, tv_view_code, tv_view_start_at, tv_view_end_at;
     private Course course;
+    private CourseRecyclerInterface mCallback;
     private View root;
 
     @Nullable
@@ -31,6 +34,7 @@ public class ViewCourseDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         root = inflater.inflate(R.layout.dialog_view_course, container, false);
+        this.mCallback = (CourseRecyclerInterface) getContext();
 
         Toolbar toolbar = (Toolbar) root.findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.title_view_course);
@@ -78,9 +82,32 @@ public class ViewCourseDialogFragment extends DialogFragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_edit:
+                mCallback.editCourse(course);
+                dismiss();
                 return true;
 
             case R.id.action_delete:
+                new AlertDialog.Builder(getContext())
+                        .setTitle(R.string.title_sure)
+                        .setMessage(R.string.lbl_permanet_del)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setPositiveButton(R.string.lbl_delete, new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                new Thread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        AppDatabase.getInstance(getContext())
+                                                .courseDAO()
+                                                .delete(course);
+
+                                    }
+                                }).start();
+                                dismiss();
+                            }
+                        })
+                        .setNegativeButton(android.R.string.cancel, null).show();
                 return true;
 
             case android.R.id.home:
