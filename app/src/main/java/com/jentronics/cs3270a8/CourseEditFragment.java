@@ -28,11 +28,16 @@ public class CourseEditFragment extends Fragment {
     private TextInputEditText  tv_action_start_at;
     private TextInputEditText  tv_action_end_at;
     private Button btn_save;
+    private Course course;
 
     public CourseEditFragment() {
         // Required empty public constructor
     }
 
+    public void setCourse(Course course){
+        this.course = course;
+        Log.d("Test", "UID: "+this.course.getUid());
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -64,19 +69,16 @@ public class CourseEditFragment extends Fragment {
                 final String start = tv_action_start_at.getText().toString();
                 final String end   = tv_action_end_at.getText().toString();
               //  Log.d("test", "In the button code");
-
-                tv_action_code.setText("");
-                tv_action_id.setText("");
-                tv_action_name.setText("");
-                tv_action_start_at.setText("");
-                tv_action_end_at.setText("");
-
+                final Course course_update = new Course(tv_id, name, code, start, end);
+                course_update.setUid(course.getUid());
+                
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
+
                     AppDatabase.getInstance(getContext())
                             .courseDAO()
-                            .insert(new Course(tv_id, name, code, start, end));
+                            .update(course_update);
                     List<Course> courseList = AppDatabase.getInstance(getContext())
                             .courseDAO()
                             .loadByID(tv_id);
@@ -87,5 +89,11 @@ public class CourseEditFragment extends Fragment {
             }).start();
             }
         });
+
+        tv_action_code.setText(course.getCourse_code());
+        tv_action_id.setText(course.getId());
+        tv_action_name.setText(course.getName());
+        tv_action_start_at.setText(course.getStart_at());
+        tv_action_end_at.setText(course.getEnd_at());
     }
 }

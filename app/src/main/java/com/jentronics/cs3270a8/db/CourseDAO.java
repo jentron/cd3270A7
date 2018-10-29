@@ -18,6 +18,9 @@ public interface CourseDAO {
     @Query("select * from course where id = :id")
     List<Course> loadByID(String id);
 
+    @Query("select * from course where uid = :uid LIMIT 1")
+    Course getByUID(int uid);
+
     @Delete
     void delete(Course course);
 
