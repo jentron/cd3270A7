@@ -23,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ffffff"
+        android:layout_margin="8dp"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -38,9 +39,10 @@
                 android:text="@string/lbl_id" />
             <TextView
                 android:id="@+id/tv_view_id"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:layout_weight="1"
+                android:text="@string/hello_blank_fragment" />
         </LinearLayout>
 
         <LinearLayout
@@ -55,9 +57,10 @@
                 android:text="@string/lbl_name" />
             <TextView
                 android:id="@+id/tv_view_name"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:layout_weight="1"
+                android:text="@string/hello_blank_fragment" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,9 +74,10 @@
                 android:text="@string/lbl_code" />
             <TextView
                 android:id="@+id/tv_view_code"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:layout_weight="1"
+                android:text="@string/hello_blank_fragment" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -87,9 +91,10 @@
                 android:text="@string/lbl_start_at" />
             <TextView
                 android:id="@+id/tv_view_start_at"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:layout_weight="1"
+                android:text="@string/hello_blank_fragment" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -103,9 +108,10 @@
                 android:text="@string/lbl_end_at" />
             <TextView
                 android:id="@+id/tv_view_end_at"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:layout_weight="1"
+                android:text="@string/hello_blank_fragment" />
         </LinearLayout>
 
 
