@@ -55,6 +55,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                 @Override
                 public boolean onLongClick(View view){
                     Log.d("Test", "Long Press fired on "+course.toString());
+                    task.setCourseRecyclerInterface(mCallback);
                     task.execute(course.getId());
                     return true;
                 }

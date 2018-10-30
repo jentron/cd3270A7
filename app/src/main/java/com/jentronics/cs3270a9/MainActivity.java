@@ -18,7 +18,8 @@ import com.jentronics.cs3270a9.db.Course;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity   implements CourseRecyclerInterface, GetCanvasCourses.OnCourseComplete {
+public class MainActivity extends AppCompatActivity
+        implements CourseRecyclerInterface, GetCanvasCourses.OnCourseComplete {
 
     private GetCanvasCourses task;
 
@@ -114,4 +115,13 @@ public class MainActivity extends AppCompatActivity   implements CourseRecyclerI
         }
 
     }
+
+    @Override
+    public void processAssigmentList(Assignment[] assignments) {
+        if(assignments != null) {
+            Log.d("Test", "There are " + assignments.length + " assignments");
+            for( int i=0; i<assignments.length;i++) Log.d("Test Assignments", assignments[i].toString());
+        }
+    }
+
 }

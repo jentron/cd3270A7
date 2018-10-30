@@ -22,6 +22,7 @@ public class GetCanvasCourses extends AsyncTask<String, Integer, String> {
 
     public interface OnCourseComplete{
         void processCourseList(Course[] courses);
+        void processAssigmentList(Assignment[] assignments);
     }
 
     public void setOnCourseComplete(OnCourseComplete mCallback){
